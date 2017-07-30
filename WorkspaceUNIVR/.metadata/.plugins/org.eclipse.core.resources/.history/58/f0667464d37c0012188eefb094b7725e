@@ -1,0 +1,29 @@
+import it.univr.scacchi.Casella;
+import it.univr.scacchi.CasellaVuota;
+import it.univr.scacchi.Pedina;
+import it.univr.scacchi.pedine.Alfiere;
+import it.univr.scacchi.pedine.Cavallo;
+import it.univr.scacchi.pedine.Pedone;
+import it.univr.scacchi.pedine.Re;
+import it.univr.scacchi.pedine.Regina;
+import it.univr.scacchi.pedine.Torre;
+
+
+public class GameBoard extends JFrame {
+	/**
+	 * Il numero di caselle per ogni riga.
+	 */
+
+	public final static int NUMERO_CASELLE_RIGA = 100;
+
+	/**
+	 * Il numero di caselle per ogni colonna.
+	 */
+
+	public final static int NUMERO_CASELLE_COLONNA = 100;
+	
+	private final Casella[][] caselle = {
+			
+		};
+
+}

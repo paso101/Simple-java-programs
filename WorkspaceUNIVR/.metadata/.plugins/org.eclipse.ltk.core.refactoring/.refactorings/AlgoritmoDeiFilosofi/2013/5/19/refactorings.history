@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;AlgoritmoDeiFilosofi/src/it.univr.AlgoritmoDeiFilosofi&apos;&#x0A;- Original project: &apos;AlgoritmoDeiFilosofi&apos;&#x0A;- Destination element: &apos;AlgoritmoDeiFilosofi/src/it.univr.AlgoritmoDeiFilosofi&apos;&#x0A;- Original elements:&#x0A;     Table.java&#x0A;     Philosopher.java&#x0A;     Fork.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;it.univr.AlgoritmoDeiFilosofi" element1="/src&lt;{Table.java" element2="/src&lt;{Philosopher.java" element3="/src&lt;{Fork.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367912900161" units="3" version="1.0"/>
+</session>

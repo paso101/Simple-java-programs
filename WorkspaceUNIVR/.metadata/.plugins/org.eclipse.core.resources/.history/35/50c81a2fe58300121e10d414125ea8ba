@@ -1,0 +1,300 @@
+import javax.swing.JLabel;
+
+
+public class AlgoritmoVita {
+	
+	private int[][] mondo = new int[50][50]; // insieme di cellule
+	private final static int DIM_CELLULA = 10; // dimensione in pixel della cellula
+	
+	public AlgoritmoVita() {		
+		mondo[14][14] = 1;
+		mondo[14][15] = 1;
+		mondo[0][0] = 1;
+		mondo[15][15] = 1;
+		mondo[16][16] = 1;
+		mondo[15][14] = 1;
+		
+		mondo[20][20] = 1;
+		mondo[20][21] = 1;
+		mondo[20][22] = 1;
+		mondo[21][19] = 1;
+		mondo[21][20] = 1;
+		mondo[21][21] = 1;
+		
+		mondo[30][2] = 1;
+		mondo[30][3] = 1;
+		mondo[30][4] = 1;
+	}
+	
+	private String costruisciMondo() {
+		String result = "";
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++) {
+			for(colonna = 0; colonna < 50; colonna++)
+				result += mondo[riga][colonna] + " ";
+			result += "\n";
+		}
+		
+		return result;
+	}
+	
+	private void muovi() {
+		int [][] temp = copiaTemp();
+		int riga,colonna;
+		int vecchioStato;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++) {
+				if(mondo[riga][colonna] != 2) {
+					vecchioStato = mondo[riga][colonna];
+					temp[riga][colonna] = muoviCellula(riga,colonna, vecchioStato);
+				}
+				else
+					temp[riga][colonna] = 2;
+			}
+		
+		copiaMondo(temp);
+	}
+	
+	private int[][] copiaTemp() {
+		int[][] temp = new int[50][50];
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++)
+				temp[riga][colonna] = mondo[riga][colonna];
+		
+		return temp;
+	}
+	
+	private void copiaMondo(int[][] temp) {
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++)
+				mondo[riga][colonna] = temp[riga][colonna];
+	}
+	
+	private int muoviCellula(int riga, int colonna, int vecchioStato) {
+		int nCelluleViveIntorno = 0;
+		int nuovoStato = 0;
+		
+		if(riga == 0 && colonna == 0)
+			nCelluleViveIntorno = cellulaZeroZero();
+		
+		else if(riga == 0 && colonna == 49)
+			nCelluleViveIntorno = cellulaZeroQuarantanove();
+		
+		else if(riga == 49 && colonna == 0)
+			nCelluleViveIntorno = cellulaQuarantanoveZero();
+		
+		else if(riga == 49 && colonna == 49)
+			nCelluleViveIntorno = cellulaQuarantanoveQuarantanove();
+		
+		else if(riga == 0 && (colonna > 0 && colonna < 49))
+			nCelluleViveIntorno = celluleRigaZero(colonna);
+		
+		else if(riga == 49 && (colonna > 0 && colonna < 49))
+			nCelluleViveIntorno = celluleRigaQuarantanove(colonna);
+		
+		else if(colonna == 0 && (riga > 0 && riga < 49))
+			nCelluleViveIntorno = celluleColonnaZero(riga);
+		
+		else if(colonna == 49 && (riga > 0 && riga < 49))
+			nCelluleViveIntorno = celluleColonnaQuarantanove(riga);
+		
+		else /*if((riga > 0 && riga < 49) && (colonna > 0 && colonna < 49))*/
+			nCelluleViveIntorno = tutteLeAltreCellule(riga, colonna);
+
+		if(vecchioStato == 0)
+			if(nCelluleViveIntorno == 3)
+				nuovoStato = 1;
+
+		if(vecchioStato == 1)
+			if(nCelluleViveIntorno == 2 || nCelluleViveIntorno == 3)
+				nuovoStato = 1;
+		
+		return nuovoStato;
+	}
+	
+	private int cellulaZeroZero() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaZeroQuarantanove() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaQuarantanoveZero() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[48][0] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[49][1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaQuarantanoveQuarantanove() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[49][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][49] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleRigaZero(int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[0][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleRigaQuarantanove(int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[49][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[49][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleColonnaZero(int riga) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga - 1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleColonnaQuarantanove(int riga) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga - 1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][48] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][48] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][48] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int tutteLeAltreCellule(int riga, int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	public static void main(String[] args) {
+		AlgoritmoVita algoritmoVita = new AlgoritmoVita();
+		int cont = 0;
+		
+		System.out.println(algoritmoVita.costruisciMondo());
+		
+		while(cont < 10) {
+			algoritmoVita.muovi();
+			System.out.println(algoritmoVita.costruisciMondo());
+			cont++;
+		}
+	}
+
+}

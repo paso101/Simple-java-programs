@@ -1,0 +1,4 @@
+digraph G { 
+b0->TRUE1;
+b0->TRUE2;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;OraMinSec&apos; to &apos;Orario&apos;&#x0A;- Original project: &apos;Orario&apos;&#x0A;- Original element: &apos;OraMinSec&apos;&#x0A;- Renamed element: &apos;Orario&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;OraMinSec&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{OraMinSec.java[OraMinSec" matchStrategy="1" name="Orario" qualified="false" references="true" similarDeclarations="false" stamp="1364027366682" textual="false" version="1.0"/>
+</session>

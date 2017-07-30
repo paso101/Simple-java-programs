@@ -1,0 +1,14 @@
+import it.univr.scacchi.Scacchiera;
+
+
+public class GameOfLife {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		new GameBoard().setVisible(true);
+
+	}
+
+}

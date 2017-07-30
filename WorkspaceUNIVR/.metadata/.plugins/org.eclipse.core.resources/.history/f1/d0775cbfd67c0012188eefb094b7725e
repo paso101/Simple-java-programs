@@ -1,0 +1,57 @@
+import it.univr.scacchi.Casella;
+import it.univr.scacchi.Scacchiera;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Icon;
+import javax.swing.JButton;
+
+public abstract class Casella extends JButton {
+	
+	/**
+	 * GameBoard in cui si trova questa casella.
+	 */
+
+	private final GameBoard gameboard;
+
+	/**
+	 * La riga in cui si trova questa casella.
+	 */
+
+	private int riga;
+
+	/**
+	 * La colonna in cui si trova questa casella.
+	 */
+
+	private int colonna;
+
+	/**
+	 * La dimensione di una casella, in pixel.
+	 */
+
+	public final static int DIMENSIONE = 35;
+
+	/**
+	 * Crea una casella con l'immagine indicata.
+	 *
+	 * @param immagine l'immagine
+	 * @param scacchiera la scacchiera a cui appartiene questa casella
+	 */
+
+	protected Casella(Icon immagine, final GameBoard gameboard) {
+		super(immagine);
+
+		this.gameboard = gameboard;
+
+		this.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameboard.clicked(Casella.this);
+			}			
+		});
+	}
+}//end

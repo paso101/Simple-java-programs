@@ -1,0 +1,485 @@
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+
+public class GameOfLifeMini extends JFrame {
+	
+	// PULSANTI
+	
+	private JButton startButton;
+	private JButton stopButton;
+	private JButton resetButton;
+	
+	// GENERAZIONI
+	
+	private JLabel generations;
+	private int numberOfGenerations = 0;
+	
+	// MENU
+	
+	private String[] stillLifesType = {"Block", "Beehive", "Loaf", "Boat"};
+	private String[] oscillatorsType = {"Blincker", "Toad", "Beacon", "Pulsar"};
+	private String[] spaceShipsType = {"Glider", "LWSS"};
+	
+	private JMenuBar barraDeiMenu = new JMenuBar();
+	private JMenu stillLifesMenu; // fissi
+	private JMenu oscillatorsMenu; // oscillatori
+	private JMenu spaceShipsMenu; // navicelle
+	
+	// CELLULE
+	
+	private final static ImageIcon CELLULA_BIANCA = new ImageIcon("images/Bianco.jpg");
+	private final static ImageIcon CELLULA_NERA = new ImageIcon("images/Nero.jpg");
+	private final static ImageIcon CELLULA_ROSSA = new ImageIcon("images/Rosso.jpg");
+	
+	// GRIGLIA
+	
+	private int[][] mondo = new int[50][50]; // insieme di cellule
+	private final static int DIM_CELLULA = 10; // dimensione in pixel della cellula
+	
+	// ASCOLTATORI
+	
+	private AscButton adpBN = new AscButton();
+	
+	public GameOfLifeMini() {
+		
+		mondo[14][14] = 1;
+		mondo[14][15] = 1;
+		mondo[0][0] = 1;
+		mondo[15][15] = 1;
+		mondo[16][16] = 1;
+		mondo[15][14] = 1;
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Game of Life");
+		setSize(520, 600);
+		setResizable(true);
+		
+		setPulsanti();
+		setEtichetta();
+		setMenu();
+		
+		Container container = getContentPane();
+		container.setLayout(null);
+		container.setBackground(Color.cyan);
+		
+		// container.add(barraDeiMenu); // RICORDA DI NON METTERE QUESTO!
+		container.add(startButton);
+		container.add(stopButton);
+		container.add(resetButton);
+		container.add(generations);
+		
+		setVisible(true);
+		
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++) {
+			for(colonna = 0; colonna < 50; colonna++) {
+				if(mondo[riga][colonna] == 0) {
+					JLabel cellulaBianca = new JLabel(CELLULA_BIANCA);
+					cellulaBianca.setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+					container.add(cellulaBianca);
+				}
+				else if(mondo[riga][colonna] == 1){
+					JLabel cellulaNera = new JLabel(CELLULA_NERA);
+					cellulaNera.setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+					container.add(cellulaNera);
+				}
+				else if(mondo[riga][colonna] == 2){
+					JLabel cellulaRossa = new JLabel(CELLULA_ROSSA);
+					cellulaRossa.setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+					container.add(cellulaRossa);
+				}
+			}
+		}
+		
+		startGame();
+		
+	}
+	
+	private void setPulsanti() {		
+		startButton = new JButton("Start");
+		startButton.setBounds(0, 0, 100, 20);
+		startButton.setBackground(Color.GREEN);
+		startButton.addActionListener(adpBN);
+		
+		stopButton = new JButton("Stop");
+		stopButton.setBounds(101, 0, 100, 20);
+		stopButton.setBackground(Color.RED);
+		stopButton.addActionListener(adpBN);
+
+		resetButton = new JButton("Reset");
+		resetButton.setBounds(202, 0, 100, 20);
+		resetButton.setBackground(Color.ORANGE);
+		resetButton.addActionListener(adpBN);
+		
+		setVisible(true);
+	}
+	
+	private void setEtichetta() {
+		generations = new JLabel("Generation: " + numberOfGenerations);
+		generations.setBounds(312, 0, 100, 20);
+		setVisible(true);
+	}
+		
+	private void setMenu() {
+		stillLifesMenu = new JMenu("Still Lifes");
+		for(int pos = 0; pos < stillLifesType.length; pos++)
+			stillLifesMenu.add(new JMenuItem(stillLifesType[pos]));
+		barraDeiMenu.add(stillLifesMenu);
+		
+		oscillatorsMenu = new JMenu("Oscillators");
+		for(int pos = 0; pos < oscillatorsType.length; pos++)
+			oscillatorsMenu.add(new JMenuItem(oscillatorsType[pos]));
+		barraDeiMenu.add(oscillatorsMenu);
+		
+		spaceShipsMenu = new JMenu("Space Ships");
+		for(int pos = 0; pos < spaceShipsType.length; pos++)
+			spaceShipsMenu.add(new JMenuItem(spaceShipsType[pos]));
+		barraDeiMenu.add(spaceShipsMenu);
+		
+		setJMenuBar(barraDeiMenu);		
+		setVisible(true);
+	}
+	
+	public void disegnaMondo(Container container) {
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++) {
+			for(colonna = 0; colonna < 50; colonna++) {
+				if(mondo[riga][colonna] == 0) {
+					disegnaCellulaSpenta(riga, colonna, container);
+				}
+				else if(mondo[riga][colonna] == 1){
+					disegnaCellulaViva(riga, colonna, container);
+				}
+				else if(mondo[riga][colonna] == 2){
+					disegnaCellulaMorta(riga, colonna, container);
+				}
+			}
+		}
+	}
+	
+	private void disegnaCellulaSpenta(int riga, int colonna, Container container) {
+		/**
+		 * disegna un quadratino di dimensioni 10 * 10 pixel
+		 * in posizione (riga * DIM_CELLULA, colonna * DIM_CELLULA)
+		 * avente il contorno nero  
+		 */
+		
+		JLabel cellulaBianca = new JLabel(CELLULA_BIANCA);
+		setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+		container.add(cellulaBianca);
+	}
+	
+	private void disegnaCellulaViva(int riga, int colonna, Container container) {
+		/**
+		 * disegna un quadratino di dimensioni 10 * 10 pixel
+		 * in posizione (riga * DIM_CELLULA, colonna * DIM_CELLULA)
+		 * di colore nero  
+		 */
+		
+		JLabel cellulaNera = new JLabel(CELLULA_NERA);
+		setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+		container.add(cellulaNera);
+	}
+	
+	private void disegnaCellulaMorta(int riga, int colonna, Container container) {
+		/**
+		 * disegna un quadratino di dimensioni 10 * 10 pixel
+		 * in posizione (riga * DIM_CELLULA, colonna * DIM_CELLULA)
+		 * di colore rosso e avente il contorno nero
+		 */
+		
+		JLabel cellulaRossa = new JLabel(CELLULA_ROSSA);
+		setBounds(riga * DIM_CELLULA, colonna * DIM_CELLULA + 40, 10, 10);
+		container.add(cellulaRossa);
+	}
+	
+	private void startGame() {
+		while(true) {
+			muovi();
+			disegnaMondo();
+			repaint();
+			sleepFor(100);
+		}
+	}
+	
+	private void sleepFor(int milliseconds) {
+		try {
+			Thread.sleep(milliseconds);
+		} catch (InterruptedException e) {
+		}
+	}
+	
+	private void muovi() {
+		int [][] temp = copiaTemp();
+		int riga,colonna;
+		int vecchioStato;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++) {
+				if(mondo[riga][colonna] != 2) {
+					vecchioStato = mondo[riga][colonna];
+					temp[riga][colonna] = muoviCellula(riga,colonna, vecchioStato);
+				}
+				else
+					temp[riga][colonna] = 2;
+			}
+		
+		copiaMondo(temp);
+	}
+	
+	private int[][] copiaTemp() {
+		int[][] temp = new int[50][50];
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++)
+				temp[riga][colonna] = mondo[riga][colonna];
+		
+		return temp;
+	}
+	
+	private void copiaMondo(int[][] temp) {
+		int riga, colonna;
+		
+		for(riga = 0; riga < 50; riga++)
+			for(colonna = 0; colonna < 50; colonna++)
+				mondo[riga][colonna] = temp[riga][colonna];
+	}
+	
+	private int muoviCellula(int riga, int colonna, int vecchioStato) {
+		int nCelluleViveIntorno = 0;
+		int nuovoStato = 0;
+		
+		if(riga == 0 && colonna == 0)
+			nCelluleViveIntorno = cellulaZeroZero();
+		
+		else if(riga == 0 && colonna == 49)
+			nCelluleViveIntorno = cellulaZeroQuarantanove();
+		
+		else if(riga == 49 && colonna == 0)
+			nCelluleViveIntorno = cellulaQuarantanoveZero();
+		
+		else if(riga == 49 && colonna == 49)
+			nCelluleViveIntorno = cellulaQuarantanoveQuarantanove();
+		
+		else if(riga == 0 && (colonna > 0 && colonna < 49))
+			nCelluleViveIntorno = celluleRigaZero(colonna);
+		
+		else if(riga == 49 && (colonna > 0 && colonna < 49))
+			nCelluleViveIntorno = celluleRigaQuarantanove(colonna);
+		
+		else if(colonna == 0 && (riga > 0 && riga < 49))
+			nCelluleViveIntorno = celluleColonnaZero(riga);
+		
+		else if(colonna == 49 && (riga > 0 && riga < 49))
+			nCelluleViveIntorno = celluleColonnaQuarantanove(riga);
+		
+		else
+			nCelluleViveIntorno = tutteLeAltreCellule(riga, colonna);
+
+		if(vecchioStato == 0)
+			if(nCelluleViveIntorno == 3)
+				nuovoStato = 1;
+
+		if(vecchioStato == 1)
+			if(nCelluleViveIntorno == 2 || nCelluleViveIntorno == 3)
+				nuovoStato = 1;
+		
+		return nuovoStato;
+	}
+	
+	private int cellulaZeroZero() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaZeroQuarantanove() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaQuarantanoveZero() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[48][0] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][1] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[49][1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int cellulaQuarantanoveQuarantanove() {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[49][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][48] == 1)
+			nCelluleViveIntorno++;
+		if(mondo[48][49] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleRigaZero(int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[0][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[0][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleRigaQuarantanove(int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[49][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[49][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[48][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleColonnaZero(int riga) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga - 1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][0] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int celluleColonnaQuarantanove(int riga) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga - 1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][49] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][48] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][48] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][48] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+	
+	private int tutteLeAltreCellule(int riga, int colonna) {
+		int nCelluleViveIntorno = 0;
+		
+		if(mondo[riga][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga - 1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna - 1] == 1)
+			nCelluleViveIntorno++;
+		
+		if(mondo[riga + 1][colonna + 1] == 1)
+			nCelluleViveIntorno++;
+		
+		return nCelluleViveIntorno;
+	}
+
+	public static void main(String[] args) {
+		new GameOfLifeMini();
+	}
+	
+	public class AscButton implements ActionListener {
+		
+		public int nClick = 0;
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			/*
+			nClick += 1;
+			JComponent cmp = (JComponent) e.getSource();
+
+			cmp.getTopLevelAncestor().repaint();
+			*/
+		}
+		
+	}
+
+}

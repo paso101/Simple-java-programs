@@ -1,0 +1,52 @@
+import it.univr.scacchi.Casella;
+
+import javax.swing.JFrame;
+
+
+public class GameBoard extends JFrame {
+	/**
+	 * Il numero di caselle per ogni riga.
+	 */
+
+	public final static int NUMERO_CASELLE = 100;
+
+	
+	/**
+	 * Crea e disegna la GameBoard.
+	 */
+
+	public GameBoard() {
+		super("MY GAME OF LIFE !");
+
+		quitIfClose();
+		doNotUseLayoutManager();
+		fixSize();
+		paintAllCaselle();
+	}
+	
+	private void quitIfClose() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void doNotUseLayoutManager() {
+		getContentPane().setLayout(null);
+	}
+
+	private void fixSize() {
+		getContentPane().setBounds(40, 40,
+			Casella.DIMENSIONE * NUMERO_CASELLE,
+			Casella.DIMENSIONE * NUMERO_CASELLE);
+		setSize(Casella.DIMENSIONE * NUMERO_CASELLE + 100,
+				Casella.DIMENSIONE * NUMERO_CASELLE + 100);
+		setResizable(true);
+	}
+
+	private void paintAllCaselle() {
+		int riga = 0;
+		for (Casella[] rigaDiPedine: caselle) {
+			int colonna = 0;
+			for (Casella casella: rigaDiPedine)
+				posiziona(casella, riga, colonna++);
+			riga++;
+		}
+	}

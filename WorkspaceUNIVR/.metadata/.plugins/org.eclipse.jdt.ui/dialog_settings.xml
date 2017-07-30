@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="CDC-1.0/Foundation-1.0" key="org.eclipse.jdt.ui.last.selected.execution.enviroment"/>
+	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="2" key="CallHierarchyViewPart.field_mode"/>
+	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<item value="500" key="CallHierarchyViewPart.ratio1"/>
+	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
+	<item value="500" key="CallHierarchyViewPart.ratio3"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="1" key="CallHierarchyViewPart.call_mode"/>
+	<item value="filter_imports;" key="filters_last_used"/>
+	<item value="3" key="CallHierarchyViewPart.orientation"/>
+	<item value="1" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
+	<list key="SearchScopeActionGroup.working_set">
+	</list>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="false" key="updateTextualMatches"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
+	<section name="SearchInDialog">
+		<item value="true" key="SearchInProjects"/>
+		<item value="true" key="SearchInAppLibs"/>
+		<item value="true" key="SearchInJRE"/>
+		<item value="true" key="SearchInSources"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="1" key="layout"/>
+		<item value="true" key="group_libraries"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;1&quot; linkWithEditor=&quot;1&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1352828828547&quot;&gt;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0A;&lt;xmlDefinedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.BinaryProjectFilter1&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.pde.ui.ExternalPluginLibrariesFilter1&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0A;&lt;/customFilters&gt;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
+		<item value="true" key="linkWithEditor"/>
+		<item value="1" key="rootMode"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="false" key="create_main"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item value="600" key="width"/>
+		<item value="400" key="height"/>
+	</section>
+	<section name="CallHierarchySearchScope">
+	</section>
+	<section name="javadoc">
+		<item value="private" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/GameOfLifeWithBDD/javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/javadoc:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/doc:/usr/lib/jvm/java-7-openjdk-amd64/bin/javadoc" key="javadoc_command_history"/>
+		<item value="1.8" key="source"/>
+		<item value="true" key="version"/>
+		<item value="CNF-SAT Documentation" key="doctitle"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/GameOfLifeWithBDD/doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+			<section name="Persona">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Persona/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Persona/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Draw">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Draw/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Draw/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Studente">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Studente/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Studente/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Scacchi">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Scacchi/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Scacchi/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Circuito">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Circuito/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Circuito/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/RemoteSystemsTempFiles/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/RemoteSystemsTempFiles/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Elezione">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Elezione/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Elezione/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="TreeSet">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/TreeSet/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/TreeSet/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Knight">
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/Knight/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/Knight/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Orario">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Orario/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Orario/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Tree">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Tree/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Tree/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CupidoSingolo">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CupidoSingolo/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CupidoSingolo/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="GenThreadsCasualArray">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/GenThreadsCasualArray/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/GenThreadsCasualArray/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Stringa">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Stringa/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Stringa/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Automobili">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Automobili/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Automobili/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Felino">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Felino/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Felino/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Data">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Data/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Data/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CupidoPoligamo">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CupidoPoligamo/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CupidoPoligamo/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="TryCatchFinally">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/TryCatchFinally/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/TryCatchFinally/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Stack">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Stack/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Stack/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Cupido">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Cupido/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Cupido/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Queens">
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/Queens/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/Queens/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ArrayDinamici">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/ArrayDinamici/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/ArrayDinamici/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Television">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Television/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Television/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="GameOfLifeWithBDD">
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/GameOfLifeWithBDD/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My_Workspaces/WorkspaceUNIVR/GameOfLifeWithBDD/doc" key="destdir"/>
+				<item value="file:/home/damiano/My_Workspaces/WorkspaceUNIVR/GameOfLifeWithBDD/doc/" key="href"/>
+			</section>
+			<section name="GameOfLife">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/GameOfLife/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/GameOfLife/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="AlgoritmoDeiFilosofi">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/AlgoritmoDeiFilosofi/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/AlgoritmoDeiFilosofi/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Vettori">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Vettori/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Vettori/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Person">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Person/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Person/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Grafica">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Grafica/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/Grafica/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="CNF-SAT">
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CNF-SAT/javadoc.xml" key="antpath"/>
+				<item value="/home/damiano/My Workspace/WorkspaceUNIVR/CNF-SAT/JavaDoc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+		</section>
+	</section>
+	<section name="BreadcrumbItemDropDown">
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="2" key="pageIndex"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="4" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="15" key="INCLUDE_MASK"/>
+		<section name="HISTORY2">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="Lampeggiatore" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="unisci" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="processors" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="4" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="15" key="includeMask"/>
+			<item value="call" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
+	<section name="JavadocWizardDialog">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="660" key="DIALOG_HEIGHT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="421" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="JarPackageWizard">
+		<item value="false" key="JarPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
+		<item value="" key="JarManifestWizardPage.MANIFEST_LOCATION"/>
+		<item value="false" key="JarManifestWizardPage.SEAL_JAR"/>
+		<item value="true" key="JarPackageWizardPage.COMPRESS"/>
+		<item value="false" key="JarManifestWizardPage.REUSE_MANIFEST"/>
+		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_WARNINGS"/>
+		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
+		<item value="true" key="jarOptionsWizardPage.BUILD_IF_NEEDED"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_JAVA_FILES"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
+		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
+		<item value="false" key="JarPackageWizardPage.OVERWRITE"/>
+		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
+		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
+		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
+		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/damiano/Scrivania/Progetto2015-2016/GameOfLifeWithBDD.jar"/>
+			<item value="/home/damiano/Scrivania/Progetto2015-2016/Untitled.jar"/>
+		</list>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+</section>

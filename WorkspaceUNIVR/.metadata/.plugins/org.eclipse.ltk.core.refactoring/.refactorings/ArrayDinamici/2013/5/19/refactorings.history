@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;ArrayDinamici/src/it.univr.ArrayDinamici&apos;&#x0A;- Original project: &apos;ArrayDinamici&apos;&#x0A;- Destination element: &apos;ArrayDinamici/src/it.univr.ArrayDinamici&apos;&#x0A;- Original elements:&#x0A;     Main.java&#x0A;     Insieme.java&#x0A;     InsiemeTest.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;it.univr.ArrayDinamici" element1="/src&lt;{Main.java" element2="/src&lt;{Insieme.java" element3="/src&lt;{InsiemeTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367912872164" units="3" version="1.0"/>
+</session>

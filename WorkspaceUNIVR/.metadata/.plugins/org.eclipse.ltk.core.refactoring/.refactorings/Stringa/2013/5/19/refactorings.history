@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;Stringa/src/it.univr.Stringa&apos;&#x0A;- Original project: &apos;Stringa&apos;&#x0A;- Destination element: &apos;Stringa/src/it.univr.Stringa&apos;&#x0A;- Original elements:&#x0A;     StringaArrayTester.java&#x0A;     StringaArray.java&#x0A;     Stringa.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;it.univr.Stringa" element1="/src&lt;{StringaArrayTester.java" element2="/src&lt;{StringaArray.java" element3="/src&lt;{Stringa.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367913361117" units="3" version="1.0"/>
+</session>

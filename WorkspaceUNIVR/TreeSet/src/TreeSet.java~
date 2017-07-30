@@ -1,0 +1,232 @@
+
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.SortedSet;
+
+public class TreeSet implements SortedSet<Integer> {
+
+	private class Node {
+		private final int value;
+		private Node left;
+		private Node right;
+
+		private Node(int value, Node left, Node right) {
+			this.value = value;
+			this.left = left;
+			this.right = right;
+		}
+
+		/**
+		 * Aggiunge un elemento a questo albero.
+		 *
+		 * @param value l'elemento da aggiungere
+		 * @return true se e solo se è stato realmente aggiunto
+		 *         un nuovo elemento all'albero binario.
+		 */
+
+		private boolean add(int value) {
+			if (value == this.value)
+				return false;
+			else if (value < this.value)
+				if (left == null) {
+					left = new Node(value, null, null);
+					return true;
+				}
+				else
+					return left.add(value);
+			else
+				if (right == null) {
+					right = new Node(value, null, null);
+					return true;
+				}
+				else
+					return right.add(value);
+		}
+
+		private boolean contains(int element) {
+			if (value == element)
+				return true;
+			else if (element < value)
+				return left != null && left.contains(element);
+			else
+				return right != null && right.contains(element);
+		}
+
+		private boolean remove(int element) {
+			return (root = removeAux(element)) != this;
+		}
+
+		private Node removeAux(int element) {
+			if (element < value) {
+				if (left != null)
+					left = left.removeAux(element);
+				return this;
+			}
+			else if (element > value) {
+				if (right != null)
+					right = right.removeAux(element);
+				return this;
+			}
+			else {
+				if (left != null) {
+					int max = left.max();
+					return new Node(max, left.removeAux(max), right);
+				}
+				else
+					return right;
+			}
+		}
+
+		private int max() {
+			if (right != null)
+				return value;
+			else
+				return right.max();
+		}
+
+		private int min() {
+			if (left != null)
+				return value;
+			else
+				return left.min();
+		}
+
+		public int size() {
+			return 1 +
+				(left != null ? left.size() : 0) +
+				(right != null ? right.size() : 0);
+		}
+	}
+
+	/**
+	 * L'albero binario che contiene i nodi di questa struttura dati.
+	 */
+
+	private Node root;
+
+	public TreeSet() {}
+
+	@Override
+	public boolean add(Integer value) {
+		if (root == null) {
+			root = new Node(value, null, null);
+			return true;
+		}
+		else
+			return root.add(value);
+	}
+
+	@Override
+	public boolean addAll(Collection<? extends Integer> collection) {
+		boolean added = false;
+		for (Integer i: collection)
+			added |= add(i);
+
+		return added;
+	}
+
+	@Override
+	public void clear() {
+		root = null;
+	}
+
+	@Override
+	public boolean contains(Object element) {
+		return root != null && element instanceof Integer
+			&& root.contains(((Integer) element).intValue());
+	}
+
+	@Override
+	public boolean containsAll(Collection<?> collection) {
+		for (Object element: collection)
+			if (!contains(element))
+				return false;
+
+		return true;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return root == null;
+	}
+
+	@Override
+	public Iterator<Integer> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean remove(Object element) {
+		return root != null && element instanceof Integer &&
+			root.remove(((Integer) element).intValue());
+	}
+
+	@Override
+	public boolean removeAll(Collection<?> collection) {
+		boolean removed = false;
+		for (Object element: collection)
+			removed |= remove(element);
+
+		return removed;
+	}
+
+	@Override
+	public boolean retainAll(Collection<?> arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int size() {
+		return root == null ? 0 : root.size();
+	}
+
+	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T[] toArray(T[] arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Comparator<? super Integer> comparator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer first() {
+		return root != null ? root.min() : null;
+	}
+
+	@Override
+	public SortedSet<Integer> headSet(Integer arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer last() {
+		return root != null ? root.max() : null;
+	}
+
+	@Override
+	public SortedSet<Integer> subSet(Integer arg0, Integer arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SortedSet<Integer> tailSet(Integer arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

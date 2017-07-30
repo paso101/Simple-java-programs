@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;TreeSet.java&apos; to &apos;TreeSet/src/it.univr.TreeSet&apos;&#x0A;- Original project: &apos;TreeSet&apos;&#x0A;- Destination element: &apos;TreeSet/src/it.univr.TreeSet&apos;&#x0A;- Original element: &apos;TreeSet.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;it.univr.TreeSet" element1="/src&lt;{TreeSet.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367913435193" units="1" version="1.0"/>
+</session>

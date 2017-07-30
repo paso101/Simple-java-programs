@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;OraIllegalException.java&apos; to &apos;OraMinutiSecondiIllegalException.java&apos;&#x0A;- Original project: &apos;Orario&apos;&#x0A;- Original element: &apos;OraIllegalException.java&apos;&#x0A;- Renamed element: &apos;OraMinutiSecondiIllegalException.java&apos;" description="Rename compilation unit &apos;OraIllegalException.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{OraIllegalException.java" name="OraMinutiSecondiIllegalException.java" references="false" stamp="1364911415437" version="1.0"/>
+</session>

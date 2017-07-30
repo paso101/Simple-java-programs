@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;it.univr.Reflection.BigBang.java&apos; to &apos;Reflection.java&apos;&#x0A;- Original project: &apos;Reflection&apos;&#x0A;- Original element: &apos;it.univr.Reflection.BigBang.java&apos;&#x0A;- Renamed element: &apos;it.univr.Reflection.Reflection.java&apos;" description="Rename compilation unit &apos;BigBang.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;it.univr.Reflection{BigBang.java" name="Reflection.java" references="false" stamp="1494523647173" version="1.0"/>
+</session>

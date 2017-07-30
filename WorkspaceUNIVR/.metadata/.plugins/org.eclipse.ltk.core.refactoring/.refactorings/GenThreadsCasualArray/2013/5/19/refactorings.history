@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;GenThreadsCasualArray.java&apos; to &apos;GenThreadsCasualArray/src/it.univr.GenThreadsCasualArray&apos;&#x0A;- Original project: &apos;GenThreadsCasualArray&apos;&#x0A;- Destination element: &apos;GenThreadsCasualArray/src/it.univr.GenThreadsCasualArray&apos;&#x0A;- Original element: &apos;GenThreadsCasualArray.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;it.univr.GenThreadsCasualArray" element1="/src&lt;{GenThreadsCasualArray.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367913240235" units="1" version="1.0"/>
+</session>

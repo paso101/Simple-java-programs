@@ -1,0 +1,131 @@
+
+
+import java.awt.Color;
+import javax.swing.JFrame;
+
+public class Scacchiera extends JFrame {
+
+	/**
+	 * Il numero di scacchi per ogni lato.
+	 */
+
+	public final static int NUMERO_CASELLE = 1000;
+
+	/**
+	 * L'ultima pedina cliccata dall'utente.
+	 */
+
+	private Pedina ultimaPedinaCliccata;
+
+	/**
+	 * Una tabella che ricorda cosa c'e' in ogni casella.
+	 */
+
+private Casella[][] caselle = constructCaselle();	
+
+	/**
+	 * Crea e disegna la scacchiera.
+	 */
+
+	public Scacchiera() {
+		super("scacchi");
+
+		esciSeChiusa();
+		nonUsareLayoutManager();
+		fissaLeDimensioni();
+		disegnaTutteLeCaselle();
+	}
+
+	private Casella[][] constructCaselle() {
+		Casella[][] temp;
+		for(int i = 0; i<1000; i++)
+			for(int j = 0; j < 1000; j++)
+				
+	}
+
+	private void esciSeChiusa() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void nonUsareLayoutManager() {
+		getContentPane().setLayout(null);
+	}
+
+	private void fissaLeDimensioni() {
+		getContentPane().setBounds(40, 40,
+			Casella.DIMENSIONE * NUMERO_CASELLE,
+			Casella.DIMENSIONE * NUMERO_CASELLE);
+		setSize(Casella.DIMENSIONE * NUMERO_CASELLE + 8,
+				Casella.DIMENSIONE * NUMERO_CASELLE + 3);
+		setResizable(false);
+	}
+
+	private void disegnaTutteLeCaselle() {
+		int riga = 0;
+		for (Casella[] rigaDiPedine: caselle) {
+			int colonna = 0;
+			for (Casella casella: rigaDiPedine)
+				posiziona(casella, riga, colonna++);
+			riga++;
+		}
+	}
+
+	/**
+	 * Posiziona una casella alla riga e colonna indicate di questa scacchiera.
+	 *
+	 * @param casella la casella
+	 * @param riga la riga
+	 * @param colonna la colonna
+	 */
+
+	public void posiziona(Casella casella, int riga, int colonna) {
+		getContentPane().remove(caselle[riga][colonna]);
+		getContentPane().add(casella);
+		caselle[riga][colonna] = casella;
+		casella.spostaIn(riga, colonna);
+	}
+
+	/**
+	 * Un semplice main di prova.
+	 *
+	 * @param args argomenti da linea di comando (non usati)
+	 */
+
+	public static void main(String[] args) {
+		new Scacchiera().setVisible(true);
+	}
+
+	/**
+	 * Prende nota che &egrave; stato cliccata la casella indicata.
+	 *
+	 * @param casella la casella che &egrave; stata cliccata
+	 */
+
+	protected void hannoCliccato(Casella casella) {
+		if (ultimaPedinaCliccata != null && ultimaPedinaCliccata.puoSpostarsiSu(casella)) {
+			posiziona(new CasellaVuota(this),
+				ultimaPedinaCliccata.getRiga(), ultimaPedinaCliccata.getColonna());
+			posiziona(ultimaPedinaCliccata, casella.getRiga(), casella.getColonna());
+			ultimaPedinaCliccata = null;
+
+			// dobbiamo ridisegnare la finestra
+			repaint();
+		}
+		else if (casella instanceof Pedina)
+			ultimaPedinaCliccata = (Pedina) casella;
+		else
+			ultimaPedinaCliccata = null;
+	}
+
+	/**
+	 * Restituisce la casella alle seguenti coordinate.
+	 *
+	 * @param riga la riga
+	 * @param colonna la colonna
+	 * @return la casella a tali coordinate
+	 */
+
+	protected Casella getCasella(int riga, int colonna) {
+		return caselle[riga][colonna];
+	}
+}

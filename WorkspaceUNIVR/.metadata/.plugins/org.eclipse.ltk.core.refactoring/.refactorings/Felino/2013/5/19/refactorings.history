@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 6 elements to &apos;Felino/src/it.univr.Felino&apos;&#x0A;- Original project: &apos;Felino&apos;&#x0A;- Destination element: &apos;Felino/src/it.univr.Felino&apos;&#x0A;- Original elements:&#x0A;     Gatto.java&#x0A;     Scozzese.java&#x0A;     Felino.java&#x0A;     Leopardo.java&#x0A;     Siamese.java&#x0A;     Main.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;it.univr.Felino" element1="/src&lt;{Gatto.java" element2="/src&lt;{Scozzese.java" element3="/src&lt;{Felino.java" element4="/src&lt;{Leopardo.java" element5="/src&lt;{Siamese.java" element6="/src&lt;{Main.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1367913207277" units="6" version="1.0"/>
+</session>

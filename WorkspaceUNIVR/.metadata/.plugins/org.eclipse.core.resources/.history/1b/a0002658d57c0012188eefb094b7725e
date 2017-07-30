@@ -1,0 +1,37 @@
+
+import it.univr.scacchi.Scacchiera;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Icon;
+import javax.swing.JButton;
+
+public abstract class Casella extends JButton {
+	
+	/**
+	 * GameBoard in cui si trova questa casella.
+	 */
+
+	private final GameBoard gameboard;
+
+	/**
+	 * La riga in cui si trova questa casella.
+	 */
+
+	private int riga;
+
+	/**
+	 * La colonna in cui si trova questa casella.
+	 */
+
+	private int colonna;
+
+	/**
+	 * La dimensione di una casella, in pixel.
+	 */
+
+	public final static int DIMENSIONE = 35;
+
+}

@@ -1,0 +1,38 @@
+import javax.swing.JFrame;
+
+
+public class GameBoard extends JFrame {
+	/**
+	 * Il numero di caselle per ogni riga.
+	 */
+
+	public final static int NUMERO_CASELLE_RIGA = 100;
+
+	/**
+	 * Il numero di caselle per ogni colonna.
+	 */
+
+	public final static int NUMERO_CASELLE_COLONNA = 100;
+	
+	/**
+	 * Crea e disegna la scacchiera.
+	 */
+
+	public Scacchiera() {
+		super("MY GAME OF LIFE !");
+
+		esciSeChiusa();
+		nonUsareLayoutManager();
+		fissaLeDimensioni();
+		disegnaTutteLeCaselle();
+	}
+
+	private void esciSeChiusa() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void nonUsareLayoutManager() {
+		getContentPane().setLayout(null);
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class Main {
+
+	/**
+	 * MAIN
+	 * @param no args
+	 */
+	
+	public static void main(String[] args) {
+		GameOfLifeMini game = new GameOfLifeMini(4);
+		while(true)
+			game.startGame();
+	}
+
+}
